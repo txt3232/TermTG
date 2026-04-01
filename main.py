@@ -6,14 +6,22 @@ def chat(current_name_1):
 	search_1 = input(colorama.Fore.CYAN + "Who do you talk to?: ")
 	time.sleep(2)
 	
-	print(colorama.Fore.CYAN + f"Chat with {search_1}")
-	
 	while True:
+		time.sleep(0.5)
+		print(colorama.Fore.CYAN + f"Chat with {search_1}")
 		time.sleep(0.5)
 		print(colorama.Fore.CYAN + f"You are {current_name_1}")
 		time.sleep(0.5)
 		msg_1 = input(colorama.Fore.CYAN + f"Message (Commands is /help): ")
 		print(colorama.Fore.CYAN + msg_1)
+		
+		time.sleep(0.5)
+		print(colorama.Fore.GREEN + f"Chat with {current_name_1}")
+		time.sleep(0.5)
+		print(colorama.Fore.GREEN + f"You are {search_1}")
+		time.sleep(0.5)
+		msg_2 = input(colorama.Fore.GREEN + f"Message (Commands is /help): ")
+		print(colorama.Fore.GREEN + msg_2)
 		
 		if msg_1.lower() == "/help":
 			time.sleep(2)
@@ -39,26 +47,49 @@ def chat(current_name_1):
 			time.sleep(2)
 			print(colorama.Fore.CYAN + f"Hello, let's go to {sn_1}, it's cool there! My username is {send_1}!")
 		
+		if msg_2.lower() == "/help":
+			time.sleep(2)
+			print(colorama.Fore.GREEN + "/q – Quit")
+			time.sleep(0.5)
+			print(colorama.Fore.GREEN + "/whoareu – Show a who do you talking to")
+			time.sleep(0.5)
+			print(colorama.Fore.GREEN + "/send – Send a your Telegram or messanger")
+			time.sleep(0.5)
+		
+		elif msg_2.lower() == "/q":
+			time.sleep(2)
+			break
+		
+		elif msg_2.lower() == "/whoareu":
+			time.sleep(2)
+			print(colorama.Fore.CYAN + current_name_1)
+		
+		elif msg_2.lower() == "/send":
+			time.sleep(2)
+			send_2 = input(colorama.Fore.GREEN + "Please, enter a username of your social network: ")
+			sn_2 = input(colorama.Fore.GREEN + "Please, enter a social network: ")
+			time.sleep(2)
+			print(colorama.Fore.GREEN + f"Hello, let's go to {sn_2}, it's cool there! My username is {send_2}!")
 	
 
 def main():
 	time.sleep(0.5)
 	ASCII = """
-		╔════════════════════════════════════╗
-		║  ████████╗███████╗██████╗ ███╗   ███╗
-		║  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
-		║     ██║   █████╗  ██████╔╝██╔████╔██║
-		║     ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
-		║     ██║   ███████╗██║  ██║██║ ╚═╝ ██║
-		║     ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
-		║  ████████╗ ██████╗                  ║
-		║  ╚══██╔══╝██╔════╝                  ║
-		║     ██║   ██║  ███╗                 ║
-		║     ██║   ██║   ██║                 ║
-		║     ██║   ╚██████╔╝                 ║
-		║     ╚═╝    ╚═════╝                  ║
-		╚═════════════════════════════════════╝
-		 Terminal Telegram Client"""
+	┌─────────────────────────────────────┐
+	│  ████████╗███████╗██████╗ ███╗   ███╗
+	│  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
+	│     ██║   █████╗  ██████╔╝██╔████╔██║
+	│     ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
+	│     ██║   ███████╗██║  ██║██║ ╚═╝ ██║
+	│     ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+	│  ████████╗ █████╗ ██╗     ██╗  ██╗
+	│  ╚══██╔══╝██╔══██╗██║     ██║ ██╔╝
+	│     ██║   ███████║██║     █████╔╝ 
+	│     ██║   ██╔══██║██║     ██╔═██╗ 
+	│     ██║   ██║  ██║███████╗██║  ██╗
+	│     ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+	└─────────────────────────────────────┘
+     Terminal Messenger   V: 0.0.2"""
 	print(colorama.Fore.CYAN + ASCII)
 	time.sleep(2)
 	
