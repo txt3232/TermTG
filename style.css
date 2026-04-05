@@ -21,7 +21,9 @@ h1 {
 
 div {
 	background: #1C1C1C;
+	padding: 100px;
 	border-radius: 50px;
+	box-shadow: 10px 10px 10px gray;
 }
 
 h3 {
@@ -35,19 +37,29 @@ button {
 	font-size: 30px;
 	color: white;
 	font-family: Arial, sans-serif;
+	border-radius: 50px;
 }
 
 button:hover {
 	background-color: #005F00;
+	padding: 20px 30px;
+	transition: all 0.5s ease;
 }
 
 a {
-	color: #00FF00;
+	color: white;
 	font-family: Arial, sans-serif;
+	background: green;
+	padding: 25px;
+	font-size: 20px;
+	border-radius: 50px;
 }
 
 a:hover {
-	color: #009A00;
+	background: #009A00;
+	padding: 30px;
+	font-size: 25px;
+	transition: all 0.5s ease;
 }
 
 header {
@@ -56,4 +68,16 @@ header {
 
 footer {
 	text-align: right;
+}
+
+img {
+	width: 300px;
+	height: auto;
+	border-radius: 50px;
+}
+
+img:hover {
+	width: 400px;
+	height: auto;
+	transition: all 0.5s ease;
 }
