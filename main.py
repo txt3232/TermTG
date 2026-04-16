@@ -1,6 +1,74 @@
 import time
 import colorama
 
+def channel(current_name_1):
+	time.sleep(2)
+	name = input(colorama.Fore.CYAN + "What is name of channel?: ")
+	while True:
+		time.sleep(2)
+		print(colorama.Fore.CYAN + "1. Public")
+		time.sleep(0.5)
+		print(colorama.Fore.CYAN + "2. Get a popular")
+		time.sleep(0.5)
+		print(colorama.Fore.CYAN + "3. Quit")
+		time.sleep(0.5)
+		main_2 = input(colorama.Fore.CYAN + "Choice: ")
+		
+		if main_2 == "3":
+			time.sleep(2)
+			break
+		elif main_2 == "1":
+			time.sleep(2)
+			while True:
+				time.sleep(2)
+				print(colorama.Fore.CYAN + f"Channel (Commands is /help): {name}")
+				time.sleep(0.5)
+				msg_1 = input(colorama.Fore.CYAN + "New post: ")
+				time.sleep(2)
+				print(colorama.Fore.CYAN + msg_1)
+				
+				if msg_1.lower() == "/help":
+					time.sleep(2)
+					print(colorama.Fore.CYAN + "/q – Quit")
+					time.sleep(0.5)
+					print(colorama.Fore.CYAN + "/send – Send a your Telegram or messanger")
+					time.sleep(0.5)
+				elif msg_1.lower() == "/q":
+					time.sleep(2)
+					break
+				elif msg_1.lower() == "/send":
+					time.sleep(2)
+					send_1 = input(colorama.Fore.CYAN + "Please, enter a username of your social network: ")
+					sn_1 = input(colorama.Fore.CYAN + "Please, enter a social network: ")
+					time.sleep(2)
+					print(colorama.Fore.CYAN + f"Hello, let's go to {sn_1}, it's cool there! My username is {send_1}!")
+			
+		elif main_2 == "2":
+			time.sleep(2)
+			sub = 0
+			views = 0
+			comments = 0
+			reactions = 0
+			while True:
+				time.sleep(2)
+				print(colorama.Fore.CYAN + f"Channel: {name}")
+				time.sleep(0.5)
+				print(colorama.Fore.CYAN + f"Sub: {sub}")
+				time.sleep(0.5)
+				print(colorama.Fore.CYAN + f"Views: {views}")
+				time.sleep(0.5)
+				print(colorama.Fore.CYAN + f"Comments: {comments}")
+				time.sleep(0.5)
+				print(colorama.Fore.CYAN + f"Reactions: {reactions}")
+				time.sleep(0.5)
+				plus = input(colorama.Fore.CYAN + "Enter a '+': ")
+				
+				if plus.lower() == "+":
+					sub += 10
+					views = 10
+					comments = 10
+					reactions = 10
+
 def group(current_name_1):
 	time.sleep(2)
 	print(colorama.Fore.CYAN + " Who do you're wanna add to group?")
@@ -235,7 +303,7 @@ def main():
 	│     ██║   ██║  ██║███████╗██║  ██╗
 	│     ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 	└─────────────────────────────────────┘
-     Terminal Messenger   V: 0.0.3"""
+     Terminal Messenger   V: 1.0.0"""
 	print(colorama.Fore.CYAN + ASCII)
 	time.sleep(2)
 	
@@ -243,10 +311,17 @@ def main():
 	time.sleep(2)
 	name_1 = input(colorama.Fore.CYAN + "Please. enter a your name: ")
 	time.sleep(2)
+	age_1 = float(input(colorama.Fore.CYAN + "Please, enter a your age old: "))
+	time.sleep(2)
+	
+	if int(age_1) < 18:
+		print(colorama.Fore.CYAN + "Get out!")
+		time.sleep(2)
+		return
 	
 	print(colorama.Fore.CYAN + "Good")
 	time.sleep(2)
-	print(colorama.Fore.CYAN + f"Your username is {username_1}, and your name is {name_1}")
+	print(colorama.Fore.CYAN + f"Your username is {username_1}, your name is {name_1}, and your age old is {age_1}.")
 	
 	time.sleep(2)
 	
@@ -255,11 +330,15 @@ def main():
 		time.sleep(0.5)
 		print(colorama.Fore.CYAN + "2. Group")
 		time.sleep(0.5)
-		print(colorama.Fore.CYAN + "3. News")
+		print(colorama.Fore.CYAN + "3. Channel")
 		time.sleep(0.5)
-		print(colorama.Fore.CYAN + "4. About")
+		print(colorama.Fore.CYAN + "4. News")
 		time.sleep(0.5)
-		print(colorama.Fore.CYAN + "5. Quit")
+		print(colorama.Fore.CYAN + "5. About")
+		time.sleep(0.5)
+		print(colorama.Fore.CYAN + "6. Report")
+		time.sleep(0.5)
+		print(colorama.Fore.CYAN + "7. Quit")
 		time.sleep(0.5)
 		
 		main_1 = input(colorama.Fore.CYAN + "Choice: ")
@@ -275,16 +354,25 @@ def main():
 			return
 		elif main_1 == "3":
 			time.sleep(2)
-			print(colorama.Fore.CYAN + "1. Added page a news. 2. Added page a about. 3. Added group.")
+			channel(name_1)
+			return
 		elif main_1 == "4":
+			time.sleep(2)
+			print(colorama.Fore.CYAN + "1. Added page a channel. 2. Added page a report. 3. Added a checking age old.")
+		elif main_1 == "5":
 			time.sleep(2)
 			print(colorama.Fore.CYAN + "About")
 			time.sleep(2)
-			print(colorama.Fore.CYAN + "  TermTG is messenger for terminal on Python, full release will in V: 1.0.0")
+			print(colorama.Fore.CYAN + "  TermTalk is messenger for terminal on Python, full release will in V: 1.0.0")
 			time.sleep(2)
 			print(colorama.Fore.CYAN + "My GitHub: https://github.com/txt3232/")
 			time.sleep(2)
-		elif main_1 == "5":
+		elif main_1 == "6":
+			time.sleep(2)
+			report_1 = input(colorama.Fore.CYAN + "For who the report?: ")
+			time.sleep(2)
+			print(colorama.Fore.CYAN + f"Done! You're give the report at {report_1}! Wait!")
+		elif main_1 == "7":
 			time.sleep(2)
 			break
 		else:
